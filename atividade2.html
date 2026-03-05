@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Codigo que mostra o alerta no inicio da pagina e depois carrega a pagina-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<!--Agora para carregar depois que mostrar o conteudo, como se fosse anuncio-->
+<body>
+    <h1>Pagina de aula.</h1>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+            alert('DESATIVE O ADBLOCK');
+            }, 500);
+        })
+    </script>
+</body>
+
+</html>
