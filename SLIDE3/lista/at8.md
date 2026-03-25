@@ -1,0 +1,1 @@
+O operador this em JavaScript refere-se ao contexto atual de execução, apontando para o objeto que está chamando a função ou método no momento. Ele permite acessar e manipular propriedades e métodos do próprio objeto, variando seu valor conforme o local (global, objeto ou construtor)

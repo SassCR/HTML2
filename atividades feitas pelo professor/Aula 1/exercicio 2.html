@@ -1,0 +1,24 @@
+
+<!--Crie um botão em uma página HTML que, quando clicado, altera o texto de um parágrafo.-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Exercício 2</h1>
+    <p id="mensagem">Este é um exemplo de página HTML criada para a aula de CPWII</p>
+    <button onclick="alterarTexto()">Alterar Texto</button>
+    
+    <script>
+        function alterarTexto() {
+            document.getElementById("mensagem").textContent = "Este é um exemplo de Texto alterado!";
+            //busca o elemento com id "mensagem" e define seu conteúdo de texto para "Este é um exemplo de Texto alterado!"
+        } //O comando .textContent ele muda o texto para o que está escrito logo a seguir dentro do ""
+    </script>
+                
+</body>
+</html>
+

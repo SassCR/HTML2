@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form id="meu_formulario"> 
+        <fieldset>
+            <legend>Formulario</legend>
+            <label for="Nome">Nome:</label>
+            <input type="text" id="Nome" name="Bruninhasurfistinha" placeholder="nome...">
+            <br>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="lovelove" placeholder="email...">
+            <br>
+            <button type="submit">Click aqui para enviar</button>
+            <br>
+        </fieldset>
+    </form>
+    <p id="mensagem"></p>
+<script>
+    document.getElementById("meu_formulario").addEventListener("submit", (evebt) => {
+        event.preventDefault();
+
+        let nome = document.getElementById("Nome").value
+        let email = document.getElementById("Email").value
+
+        if(nome === "" || email === "") {
+            document.getElementById("mensagem").textContent = "Todos os campos são obrigatórios!"
+        }else{
+            document.getElementById("mensagem").textContent = "Formulario enviado com sucesso!"
+        }
+    })
+</script>
+</body>
+</html>

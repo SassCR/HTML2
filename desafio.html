@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scriptformulario3e4.js"></script>
+</head>
+
+<body>
+    <form id="form">
+        <h1 id="teste">SEJA BEM VINDO A PAGINA</h1>
+        <label for="nome">NOME:</label><!--Sempre será o for:nome do que deseja coloca-->
+        <input type="text"
+            id="nome"><!--Será onde vai abrir o campo para o usuario pode digitar o nome ou o que desejar sempre com esse padrão-->
+        <br>
+        <label for="sobrenome">sobrenome:</label>
+        <input type="text" id="sobrenome">
+        <br>
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma">
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha">
+        <button type="submit">ENVIAR</button>
+        <br>
+        <hr>
+    </form>
+    <!--Caso deseje fazer um botão pra muda algo ele não pode estar dentro do form, pra funciona ele tem que estar fora-->
+    <label>Caso deseje aumentar ou diminir a fonte basta clicar nos botões abaixo.</label>
+    <br>
+    <button onclick="aumentar()"> Aumentar </button>
+    <button onclick="diminuir()"> diminuir </button>
+</body>
+
+</html>

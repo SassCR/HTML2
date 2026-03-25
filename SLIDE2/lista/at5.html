@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function magica() {
+         let foto = document.getElementById("foto")
+          if(foto.getAttribute("src") === "https://assets.gamearena.gg/wp-content/uploads/2024/09/16133712/sacy-lol-1024x683.jpg"){
+            foto.src = "https://assets.gamearena.gg/wp-content/uploads/2023/11/02154410/sacy-sentinels-2.jpg"
+          }else{
+           foto.src = "https://assets.gamearena.gg/wp-content/uploads/2023/11/02154410/sacy-sentinels-2.jpg"
+          }
+
+      }
+    </script>
+  </head>
+  <body>
+    <img
+      id="foto"
+      src="https://assets.gamearena.gg/wp-content/uploads/2024/09/16133712/sacy-lol-1024x683.jpg"
+    />
+    <button type="button" onclick="magica()">Botão magico!</button>
+  </body>
+</html>

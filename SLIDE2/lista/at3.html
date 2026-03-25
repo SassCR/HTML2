@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <label for="nome">NOME:</label><!--Sempre será o for:nome do que deseja coloca-->
+        <input type="text"
+            id="nome"><!--Será onde vai abrir o campo para o usuario pode digitar o nome ou o que desejar sempre com esse padrão-->
+        <br>
+        <label for="sobrenome">sobrenome:</label>
+        <input type="text" id="sobrenome">
+        <br>
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma">
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha">
+        <button type="submit">ENVIAR</button>
+
+    </form>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault()
+            var nome = document.getElementById('nome').value
+            var sobrenome = document.getElementById('sobrenome').value
+            var turma = document.getElementById('turma').value
+            var senha = document.getElementById('senha').value
+            alert(`Sua senha está errada. ${senha}`)
+        })
+    </script>
+</body>
+
+</html>

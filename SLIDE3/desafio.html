@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio</title>
+</head>
+<body>
+
+  <h2>Cadastro</h2>
+
+  <form id="formulario">
+    Nome: <input type="text" id="nome"><br><br>
+    Sobrenome: <input type="text" id="sobrenome"><br><br>
+    Data de nascimento: <input type="text" id="data"><br><br>
+
+    <button type="submit" id="btn">Enviar</button>
+  </form>
+
+  <p id="preview"></p>
+  <p id="mensagem"></p>
+
+  <script>
+    let form = document.getElementById("formulario");
+    let btn = document.getElementById("btn");
+
+    function validarDados() {
+      let nome = document.getElementById("nome").value.trim().toUpperCase();
+      let sobrenome = document.getElementById("sobrenome").value.trim().toUpperCase();
+      let data = document.getElementById("data").value.trim();
+
+      if (data.length < 8) {
+        return "Data inválida!";
+      }
+
+      return `Nome: ${nome} ${sobrenome} | Data: ${data}`;
+    }
+
+    // 🖱️ Quando passar o mouse no botão
+    btn.addEventListener("mouseover", function () {
+      document.getElementById("preview").innerText = validarDados();
+    });
+
+    // 📤 Quando enviar
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let nome = document.getElementById("nome").value.trim().toUpperCase();
+      let sobrenome = document.getElementById("sobrenome").value.trim().toUpperCase();
+      let data = document.getElementById("data").value.trim();
+
+      // função pra mascarar
+      function mascarar(texto) {
+        return texto.substring(0, 3) + "*".repeat(texto.length - 3);
+      }
+
+      let nomeMascarado = mascarar(nome);
+      let sobrenomeMascarado = mascarar(sobrenome);
+
+      let agora = new Date();
+      let dataHora = agora.toLocaleString();
+
+      document.getElementById("mensagem").innerText =
+        `Enviado! Nome: ${nomeMascarado} ${sobrenomeMascarado} | Data: ${data} | ${dataHora}`;
+    });
+  </script>
+
+</body>
+</html>

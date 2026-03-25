@@ -1,0 +1,16 @@
+const d = new Date("January 01, 2025");
+console.log(d);
+d.setFullYear(2020);
+console.log(d);
+d.setMonth(11);
+console.log(d);
+d.setDate(15);
+console.log(d);
+d.setDate(d.getDate() + 50);
+console.log(d);
+d.setHours(22, 10, 20);
+console.log(d);
+d.setMinutes(30);
+console.log(d);
+d.setSeconds(30);
+console.log(d);

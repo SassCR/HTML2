@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 3 Formulário</title>
+    <script>
+        function mostrarAlerta() {
+            const nome = document.getElementById('nome').value;
+            const sobrenome = document.getElementById('sobrenome').value;
+            const turma = document.getElementById('turma').value;
+            alert(`Nome: ${nome}\nSobrenome: ${sobrenome}\nTurma: ${turma}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form onsubmit="event.preventDefault(); mostrarAlerta();">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required><br><br>
+
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma" name="turma" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

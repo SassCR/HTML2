@@ -1,0 +1,42 @@
+<!--Crie um formulário HTML com campos de entrada e adicione validação usando JavaScript.-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Exercício 3</h1>
+    <p>Este é um exemplo de página HTML criada para a aula de CPWII.</p>
+    <form id="meuFormulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" >
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="mensagem"></p>
+
+    <script>
+        //pega o elemento com id "meuFormulario" e adiciona um ouvinte de evento para o evento "submit"
+        document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+            //impede o comportamento padrão do formulário, que é enviar os dados e recarregar a página
+            event.preventDefault();
+            
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            //verifica se os campos "nome" ou "email" estão vazios
+            if (nome === "" || email === "") {
+                //busca o elemento com id "mensagem" e define seu conteúdo de texto para "Todos os campos são obrigatórios!"
+                document.getElementById("mensagem").textContent = "Todos os campos são obrigatórios!";
+            } else {
+                document.getElementById("mensagem").textContent = "Formulário enviado com sucesso!";
+            }
+        });
+    </script>
+
+</body>
+</html>

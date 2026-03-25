@@ -1,0 +1,46 @@
+<!--Use JavaScript para criar uma animação simples em uma página web, 
+como mover um elemento de um lado para o outro.-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <style>
+        #quadrado {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            top:0;
+            left:0;
+            transition: all 1s ease;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Bem-vindo ao Exercício 4</h1>
+    <p>Este é um exemplo de página HTML criada para a aula de CPWII.</p>
+    <div id="quadrado"></div>
+    <button onclick="moverQuadrado()">Mover Quadrado</button>
+    
+    <script>
+        function volta() {
+            let quadrado = document.getElementById("quadrado");
+                quadrado.style.backgroundColor = "black";
+                quadrado.style.top = "0px";
+                quadrado.style.left = "0px";
+        }       
+        function moverQuadrado() {
+            let quadrado = document.getElementById("quadrado");
+            quadrado.style.top = "0px";
+            quadrado.style.left = "400px";
+            setTimeout(volta, 2000); 
+            //após 2 segundos, chama a função volta para retornar o quadrado à posição inicial
+        }
+    </script>
+
+</body>
+</html>

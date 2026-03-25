@@ -1,0 +1,31 @@
+<!-- Crie uma página HTML que exibe uma mensagem de boas-vindas 
+personalizada com base no nome do usuário inserido em um campo de entrada. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Exercício 5</h1>
+    <p>Este é um exemplo de página HTML criada para a aula de CPWII.</p>
+    <body>
+        <label for="nomeUsuario">Digite seu nome:</label>
+        <input type="text" id="nomeUsuario">
+        <button onclick="saudarUsuario()">Enviar</button>
+        <p id="mensagemBoasVindas"></p>
+    
+        <script>
+            function saudarUsuario() {
+                let nome = document.getElementById("nomeUsuario").value;
+                document.getElementById("mensagemBoasVindas").textContent = "Bem-vindo, " + nome + "!";
+                //busca o elemento com id "nomeUsuario", obtém seu valor e armazena na variável "nome". 
+                // Em seguida, busca o elemento com id "mensagemBoasVindas" e define seu conteúdo de 
+                // texto para "Bem-vindo, " seguido do nome do usuário.
+            }
+        </script>
+    
+</body>
+</html>
