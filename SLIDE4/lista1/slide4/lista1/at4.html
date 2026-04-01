@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function evento() {
+            let a = document.getElementById("n1").value
+            let b = document.getElementById("n2").value
+            let resultado = ""
+    
+
+            if (a === b) {
+                resultado +=("Seu número é igual/teste1\n")
+            } else {
+                resultado += ("Seu número é diferente!/teste1\n")
+            } if (a == b) {
+                resultado += ("Seu número é igual/teste2\n")
+            } else {
+                resultado +=("Seu número é diferente/teste2\n")
+            } if (a != b) {
+                resultado +=("Seu número é igual/teste3\n");
+            } else {
+                resultado +=("Seu número é diferente/teste3\n")
+            }
+            return alert(resultado)
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <legend>Compare seus números</legend>
+        <label for="n1">Digite seu número:</label>
+        <input type="number" id="n1">
+        <br>
+        <label for="n2">Digite seu número:</label>
+        <input type="number" id="n2">
+        <br>
+        <button type="button" onclick="evento()">Start</button>
+    </form>
+</body>
+
+</html>

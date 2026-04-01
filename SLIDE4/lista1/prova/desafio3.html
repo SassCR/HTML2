@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function validarDados() {
+            const nome = document.getElementById('nome').value.trim().toUpperCase();
+            const sobrenome = document.getElementById('sobrenome').value.trim().toUpperCase();
+            const dataNascimento = document.getElementById('dataNascimento').value.trim();
+
+            if (dataNascimento.length < 10) {
+                alert('A data de nascimento deve conter no mínimo 10 caracteres (formato DD/MM/AAAA).');
+                return false;
+            }
+
+            return { nome, sobrenome, dataNascimento };
+        }
+
+        function mostrarDadosValidados() {
+            const dados = validarDados();
+            if (dados) {
+                const { nome, sobrenome, dataNascimento } = dados; //desestruturação do objeto dados
+                const mensagem = `Nome: ${nome}, Sobrenome: ${sobrenome}, Data de Nascimento: ${dataNascimento}`;
+                document.getElementById('preview').innerText = mensagem;
+            }
+        }
+
+        function enviarDados() {
+            const dados = validarDados();
+            if (dados) {
+                const { nome, sobrenome, dataNascimento } = dados;
+                const nomeMascarado = nome.slice(0, 2) + '*'.repeat(nome.length - 2);
+                const sobrenomeMascarado = sobrenome.slice(0, 2) + '*'.repeat(sobrenome.length - 2);
+                const dataHoraEnvio = new Date().toLocaleString();
+
+                alert(`Dados enviados com sucesso!\nNome: ${nomeMascarado}\nSobrenome: ${sobrenomeMascarado}\nData de Nascimento: ${dataNascimento}\nEnviado em: ${dataHoraEnvio}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulário de Validação</h1>
+<!--event.preventDefault() previne o envio do formulário para evitar recarregar a página-->
+    <form onsubmit="event.preventDefault(); enviarDados();">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="text" id="dataNascimento" placeholder="DD/MM/AAAA" required><br>
+
+        <button type="button" onmouseover="mostrarDadosValidados()">Verificar</button>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="preview" style="margin-top: 20px; font-weight: bold;"></p>
+</body>
+</html>
