@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Festa dos números</h1>
+    <p id="exibidor"></p>
+    
+    <script>
+        var numeros = [1,2,3,4,5,6,7,8,9,10]
+        let espaco = ""
+
+        function adicionarAoTexto(valor) {
+            espaco += valor + " - ";
+        }
+        numeros.forEach(adicionarAoTexto)
+        document.getElementById("exibidor").innerHTML = espaco
+    </script>
+</body>
+</html>
