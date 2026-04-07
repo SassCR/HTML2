@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Festa da Fruta</h1>
+    <p id="exibidor"></p>
+    
+    <script>
+        var fruta = new Array(3);
+        fruta[0] = "BMW"
+        fruta[1] = "Toyota"
+        fruta[2] = "Honda"
+        let espaco = ""
+        function adicionarAoTexto(valor, indice) {
+            espaco += `${indice}: ${valor} - `
+        }
+        fruta.forEach(adicionarAoTexto);
+        document.getElementById("exibidor").innerHTML = espaco
+    </script>
+</body>
+</html>

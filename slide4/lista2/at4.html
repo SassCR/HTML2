@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mercadinho do Ciliro</h1>
+    <p id="exibidor"></p>
+
+    <script>
+        const produto1 = {Nome:"Vibrador", Preço:9};
+        const produto2 = {Nome:"Plug", Preço:9};
+        let espaco = " "
+        for(let proriedade in produto1){
+            if (produto1[proriedade] === produto2[proriedade]) {
+                espaco += `O ${proriedade} ${produto1[proriedade]} e o ${produto2[proriedade]} São iguais .<br>`
+            }else{
+                espaco += `${proriedade} ${produto1[proriedade]} e o ${produto2[proriedade]} São diferentes .<br>`
+            }
+        }
+        document.getElementById("exibidor").innerHTML = espaco
+    </script>
+</body>
+</html>
