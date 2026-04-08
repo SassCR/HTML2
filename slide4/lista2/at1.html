@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
 </head>
+
 <body>
     <h1>Meu estado</h1>
-    
+
     <p id="resultado"></p>
     <script>
-        const pessoa = {nome: "Amanda", sobrenome: "Dias", idade:30}
+        const pessoa = {
+            nome: "Amanda",
+            sobrenome: "Dias",
+            idade: 30
+        }
         let espaco = "";
-        for(let propriedade in pessoa){
+        for (let propriedade in pessoa) {
             espaco += `${propriedade}  ${pessoa[propriedade]}\n`;
         }
         document.getElementById("resultado").innerHTML = espaco
     </script>
 </body>
+
 </html>

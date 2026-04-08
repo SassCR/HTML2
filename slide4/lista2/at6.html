@@ -6,19 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Festa da Fruta</h1>
+    <h1>Festa do carro</h1>
     <p id="exibidor"></p>
     
     <script>
-        var fruta = new Array(3);
-        fruta[0] = "BMW"
-        fruta[1] = "Toyota"
-        fruta[2] = "Honda"
+        var carro = new Array(3);
+        carro[0] = "BMW"
+        carro[1] = "Toyota"
+        carro[2] = "Honda"
         let espaco = ""
         function adicionarAoTexto(valor, indice) {
             espaco += `${indice}: ${valor} - `
         }
-        fruta.forEach(adicionarAoTexto);
+        carro.forEach(adicionarAoTexto);
         document.getElementById("exibidor").innerHTML = espaco
     </script>
 </body>
