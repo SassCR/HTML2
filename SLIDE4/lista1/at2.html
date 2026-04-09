@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function evento() {
+            let x = document.getElementById("digite").value
+            if (x > 0) {
+                let y = Math.trunc(x)
+                return alert(`O número inteiro é:${y} A raiz quadrada é:${Math.sqrt(y)}`)
+            }else{
+                return alert("Ele é negativo, impossivel fazer a conta.")
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <label for="digite">Digite aqui:</label>
+    <input type="number" id="digite">
+    <button type="button" onclick="evento()">start</button>
+
+</body>
+
+</html>
