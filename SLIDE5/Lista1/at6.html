@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cornsilk;
+        }
+
+
+        /*Dispositivo deitado*/
+        @media only screen and (orientation: landscape) {
+            body {
+                /*Aqui em body, ele tá mudando a cor de funto*/
+                background-color: black;
+            }
+
+            h1 {
+                color: white;
+            }
+
+
+            .caixa {
+
+                /*Aqui ele muda a cor da fonte*/
+                color: white;
+                /*Aqui ele tá mudando a cor dos elementos na pagina*/
+                display: flex;
+                /*Ele que ativa o flex-direction*/
+                flex-direction: row;
+                font-size: medium;
+                /*Ele muda o tamanho da fonte*/
+            }
+        }
+
+        /*Dispositivo em pé*/
+        @media only screen and (orientation:portrait) {
+            body {
+                background-color: rgb(21, 255, 0);
+            }
+
+            h1 {
+                color: rgb(0, 0, 0);
+            }
+           
+            .caixa {
+                color: rgb(0, 0, 0);
+                /*Aqui ele muda a cor da fonte quando estiver modo retrato para preto*/
+                display: flex;
+                flex-direction: column;
+                font-size: larger;
+            }
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <h1>Paisagem e Retrato</h1>
+    <div class="caixa">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium natus vel, consequuntur deserunt
+            perferendis molestias cupiditate, rerum inventore ullam praesentium similique culpa, quam atque animi
+            perspiciatis aliquam nesciunt optio. Expedita, blanditiis? Enim fugit amet harum quae asperiores nostrum
+            inventore labore eaque, tempora dignissimos impedit et nisi earum autem expedita cum.</p>
+            
+        <p>Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Voluptas, sit sapiente voluptatum nihil tempore
+            commodi deserunt porro possimus ipsam odit rerum voluptatibus error consequatur molestias illum sunt.
+            Molestiae illo, praesentium quam quia expedita reprehenderit animi eum voluptate dignissimos accusamus,
+            dolor quo distinctio harum ducimus laborum consequatur soluta aperiam rem inventore.</p>
+    </div>
+</body>
+
+</html>

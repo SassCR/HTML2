@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        .mobile{
+            display: none;
+        }
+        /*Tome cuidado que se não tiver um espaço no and ele não funciona.*/
+        @media only screen and (max-width:992px) {
+            .pc {
+                display: none;
+            }
+            .mobile{
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bem vindos</h1>
+    <div class="pc">
+    <p>Esse site é site é apenas para Dispositivos com tela grande.</p>
+        <button>start</button>
+    </div>
+    <div class="mobile">
+        <h1>Esse só aparece para celular</h1>
+    </div>
+</body>
+
+</html>
