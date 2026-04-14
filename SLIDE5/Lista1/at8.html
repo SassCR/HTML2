@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        /*Celular*/
+        @media screen and (min-width:600px) {
+            .caixa {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        @media screen and (min-width:992px){
+            .secao{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bem vindo</h1>
+    <div class="caixa">
+        <div class="secao"></div>
+        <div class="secao"></div>
+        <div class="secao"></div>
+    </div>
+</body>
+
+</html>
