@@ -6,20 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-color: antiquewhite;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        body{
+            font-size: Arial, sans-serif;
+            padding: 20px;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .caixa{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .secao{
+            background-color: blue;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         /*Celular*/
         @media screen and (min-width:600px) {
+            body{
+                background-color: black;
+            }
             .caixa {
                 display: flex;
                 flex-direction: column;
             }
+            .secao{
+                width: calc(100% - 15px);
+            }
         }
         @media screen and (min-width:992px){
+            body{
+                background-color: rgb(99, 47, 47);
+            }
+            .caixa{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                font-size: medium;
+            }
             .secao{
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr ;
+                width: calc(25% - 10px);/*Esse comando arruma deixando a secao no tamanho certo da tela.*/
             }
         }
     </style>
@@ -28,9 +67,10 @@
 <body>
     <h1>Bem vindo</h1>
     <div class="caixa">
-        <div class="secao"></div>
-        <div class="secao"></div>
-        <div class="secao"></div>
+        <div class="secao">Frutas</div>
+        <div class="secao">Verduras</div>
+        <div class="secao">Carnes</div>
+
     </div>
 </body>
 
