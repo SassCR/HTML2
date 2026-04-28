@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body id="alt">
+    <h1>Meu primeiro site!</h1>
+    <form class="caixa">
+        <fieldset>
+            <legend>Preencha seus dados!</legend>
+            <label for="Nome">Nome:</label>
+            <input type="text" id="Nome" placeholder="Digite seu nome!">
+            <br>
+            <label for="Nome">Email:</label>
+            <input type="text" id="Email" placeholder="Digite seu Email!">
+            <br>
+            <label for="idade">idade:</label>
+            <input type="text" id="idade" placeholder="Digite sua idade!">
+            <br>
+            <label>Senha:</label>
+            <input type="password" id="Senha" placeholder="Digite sua senha!">
+            <br>
+            <button type="button" onclick="verificar()">ENVIAR</button>
+        </fieldset>
+        <fieldset>
+            <legend>Acessibilidade:D</legend>
+            <label>alterar o tamanho da fonte:</label>
+            <input type="range" id="tamanho" min="10" max="50" value="50" oninput="alterarfonte()">
+            <br>
+            <label>alterar cor das fontes:</label>
+            <input type="color" id="cor" onchange="alterarfonte()">
+            <input type="checkbox" id="tema" onchange="modoEscuro()">
+
+        </fieldset>
+    </form>
+<!--Com o onchange ele só funciona quando for clicado-->
+    <script src="java.js"></script>
+</body>
+
+</html>
