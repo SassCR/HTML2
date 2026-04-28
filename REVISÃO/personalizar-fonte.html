@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Site que o usuario pode
+        alterar a cor da font e o tamanho dela.</h1>
+    <p id="alt">Palavra que vai ser alterar</p>
+    <input type="range" id="tamanho" min="10" max="100" value="50" oninput="alterarfonte()">
+    <br>
+    <input type="color" id="cor" oninput="alterarfonte()">
+    <br>
+    <label><input type="radio" id="Arial" name="fonte" value="Arial" onchange="alterarfonte()"> Arial</label>
+    <label><input type="radio" id="Verdana" name="fonte" value="Verdana" onchange="alterarfonte()">
+        Verdana</label>
+    <label><input type="radio" id="CourierNew" name="fonte" value="Courier New" onchange="alterarfonte()">
+        Courier New</label>
+    <br>
+    <script>
+        const alterarfonte = () => {
+            //Primeiro estou editando o tamanho da fonte
+            const tamanho = document.getElementById("tamanho").value
+            const elemento = document.getElementById("alt");
+            elemento.style.fontSize = tamanho + "px";
+
+            //Agora vou editar a cor dela
+            const cor = document.getElementById("cor").value
+            elemento.style.color = cor;
+
+            //Agora vou edita o tipo dela
+            let fonte;
+            
+            if (document.getElementById("Arial").checked) {
+                fonte = "Arial"
+            }
+            else if (document.getElementById("Verdana").checked) {
+                fonte = "Verdana";
+            } else if (document.getElementById("CourierNew").checked) {
+                fonte = "Courier New";
+            } else {
+                fonte = "Arial";//Fonte padrão caso nenhum botão esteja selecionado.
+            }
+            elemento.style.fontFamily = fonte
+        }   
+    </script>
+  
+</body>
+
+</html>
