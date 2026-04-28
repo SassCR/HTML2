@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -15,28 +15,81 @@
     <p id="formato3"></p>
 
     <script>
+
+        // Cria a data atual do computador
         let data = new Date();
 
-        // Formato 1: padrão brasileiro (dd/mm/aaaa)
+
+        // ==========================
+        // FORMATO 1
+        // ==========================
+        // Data brasileira
+        // Exemplo: 28/04/2026
+
         let formato1 = data.toLocaleDateString("pt-BR");
 
-        // Formato 2: completo (dia da semana, dia, mês e ano)
+
+        // ==========================
+        // FORMATO 2
+        // ==========================
+        // Data completa
+        // Exemplo:
+        // terça-feira, 28 de abril de 2026
+
         let formato2 = data.toLocaleDateString("pt-BR", {
+
+            // Nome do dia da semana
             weekday: "long",
+
+            // Dia com 2 números
             day: "2-digit",
+
+            // Nome do mês
             month: "long",
+
+            // Ano completo
             year: "numeric"
+
         });
 
-        // Formato 3: estilo internacional (aaaa-mm-dd)
+
+        // ==========================
+        // FORMATO 3
+        // ==========================
+        // Formato internacional
+        // Exemplo: 2026-04-28
+
+
+        // Pega ano atual
         let ano = data.getFullYear();
+
+
+        // Pega mês atual
+        // +1 porque janeiro no JS = 0
         let mes = String(data.getMonth() + 1).padStart(2, "0");
+
+
+        // Pega dia atual
         let dia = String(data.getDate()).padStart(2, "0");
+
+
+        // Junta tudo
         let formato3 = `${ano}-${mes}-${dia}`;
 
-        document.getElementById("formato1").innerHTML = "Formato 1: " + formato1;
-        document.getElementById("formato2").innerHTML = "Formato 2: " + formato2;
-        document.getElementById("formato3").innerHTML = "Formato 3: " + formato3;
+
+        // ==========================
+        // MOSTRANDO NA TELA
+        // ==========================
+
+        document.getElementById("formato1").innerHTML =
+            "Formato 1: " + formato1;
+
+        document.getElementById("formato2").innerHTML =
+            "Formato 2: " + formato2;
+
+        document.getElementById("formato3").innerHTML =
+            "Formato 3: " + formato3;
+
     </script>
 </body>
 

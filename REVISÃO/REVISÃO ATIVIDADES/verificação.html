@@ -2,78 +2,169 @@
 <html lang="en">
 
 <head>
+
+    <!-- Define acentuação -->
     <meta charset="UTF-8">
+
+    <!-- Faz o site funcionar bem no celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba -->
     <title>Document</title>
+
 </head>
 
 <body>
+
+    <!-- Formulário -->
     <form>
+
+        <!-- Caixa de agrupamento -->
         <fieldset>
+
+            <!-- Título da caixa -->
             <legend>Meu site de Verificação</legend>
+
+            <!-- Campo nome -->
             <label for="Nome">Nome:</label>
-            <input type="text" id="Nome" placeholder="digite seu nome!" >
+            <input type="text" id="Nome" placeholder="digite seu nome!">
+
             <br>
+
+            <!-- Campo email -->
             <label for="Email">Email:</label>
-            <input type="text" id="Email" placeholder="digite seu email!" >
+            <input type="text" id="Email" placeholder="digite seu email!">
+
             <br>
+
+            <!-- Campo nascimento -->
             <label for="Nascimento">Nascimento:</label>
-            <input type="text" id="Nascimento" placeholder="00/00/0000" maxlength="8" minlength="8" >
+
+            <!-- maxlength e minlength = 8 caracteres -->
+            <input type="text" id="Nascimento" placeholder="00/00/0000" maxlength="8" minlength="8">
+
+            <!-- Botão -->
             <button type="button" onclick="verificar()">Enviar</button>
+
         </fieldset>
+
     </form>
-    
-    <p id="Resultado">1) Crie uma página HTML, com os campos, nome, e-mail e data de nascimento e um botão para
-        exibir, faça as validações para cada campo e exiba os dados, quando o botão for clicado.</p>
+
+    <!-- Local onde mostra resultado -->
+    <p id="Resultado">
+        1) Crie uma página HTML...
+    </p>
+
     <script>
+
+        // Função principal
         const verificar = () => {
+
+            // Pegando valor do nome
             let nome = document.getElementById("Nome").value
+
+            // Pegando valor do email
             let email = document.getElementById("Email").value
+
+            // Pegando data e transformando em número
             let data = Number(document.getElementById("Nascimento").value)
 
-            //Verificando Nome
+
+            // ==========================
+            // VERIFICANDO CAMPOS VAZIOS
+            // ==========================
+
             if (!nome || !email) {
+
+                // Se nome ou email estiver vazio
                 return alert("Preencha todos os campos!")
 
             } else if (!data) {
+
+                // Se data não for número
                 if (isNaN(data)) {
                     return alert("Digite apenas números!")
                 }
+
+                // Se estiver vazio
                 return alert("Preencha todos os campos!")
             }
 
+
+            // ==========================
+            // VALIDANDO NOME
+            // ==========================
+
+            // Remove espaços no começo/fim
             nome = nome.trim()
+
+            // Procura número no nome
             verificaNome = nome.search(/[0-9+]/g)
+
+            // Se achar número
             if (verificaNome != -1) {
-                return alert(`Apenas letras!${nome}`)
+                return alert(`Apenas letras! ${nome}`)
             }
 
-            //Verificando email
+
+            // ==========================
+            // VALIDANDO EMAIL
+            // ==========================
+
+            // Remove espaços
             email = email.trim()
+
+            // Procura @
             verificarEmail = email.search("@")
+
+            // Se não existir @
             if (verificarEmail === -1) {
+
                 return alert("Não existe @ no email!")
+
+            // Se @ estiver no começo
             } else if (verificarEmail === 0) {
+
                 return alert("É necessario ter algo escrito antes do @")
+
+            // Se @ estiver no final
             } else if (email.length - 1 === verificarEmail) {
+
                 return alert("É necessário escrever algo no email!")
             }
 
 
-            //Verificando data  
+            // ==========================
+            // FORMATANDO DATA
+            // ==========================
+
+            // Transforma número em texto
             data = String(data)
+
+            // Pega dia
             let formato1 = data.slice(0,2)
-            let formato2 = data.slice(2,4) 
+
+            // Pega mês
+            let formato2 = data.slice(2,4)
+
+            // Pega ano
             let formato3 = data.slice(4)
+
+            // Junta no formato dd/mm/aaaa
             data = `${formato1}/${formato2}/${formato3}`
-        
-        
-            document.getElementById("Resultado").innerHTML = `Nome:${nome}<br>Email:${email}<br>Data de Nascimento:${data}`
-                
+
+
+            // ==========================
+            // MOSTRANDO RESULTADO
+            // ==========================
+
+            document.getElementById("Resultado").innerHTML =
+            `Nome:${nome}<br>Email:${email}<br>Data de Nascimento:${data}`
 
         }
+
     </script>
+
 </body>
 
 </html>
-
