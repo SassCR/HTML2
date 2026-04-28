@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Senha</title>
+</head>
+
+<body>
+    <h1>Gerador de Senhas</h1>
+
+    <label for="tamanho">Escolha o tamanho da senha:</label>
+    <input type="number" id="tamanho" min="1" placeholder="Ex: 8">
+
+    <br><br>
+
+    <button onclick="criarSenha()">Gerar Senha</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function gerarSenha(tamanho) {
+            const caracteres =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
+
+            let senha = "";
+
+            for (let i = 0; i < tamanho; i++) {
+                const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+                senha += caracteres[indiceAleatorio];
+            }
+
+            return senha;
+        }
+
+        function criarSenha() {
+            let tamanho = Number(document.getElementById("tamanho").value);
+
+            if (isNaN(tamanho) || tamanho <= 0) {
+                document.getElementById("resultado").innerHTML =
+                    "Digite um tamanho válido!";
+                return;
+            }
+
+            let senhaGerada = gerarSenha(tamanho);
+
+            document.getElementById("resultado").innerHTML =
+                "Senha gerada: " + senhaGerada;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Exibindo três datas com formatos diferentes</h1>
+    <p>4) Crie um página web que exiba a data atual em pelo menos três formatos diferentes.</p>
+    <p id="formato1"></p>
+    <p id="formato2"></p>
+    <p id="formato3"></p>
+
+    <script>
+        let data = new Date();
+
+        // Formato 1: padrão brasileiro (dd/mm/aaaa)
+        let formato1 = data.toLocaleDateString("pt-BR");
+
+        // Formato 2: completo (dia da semana, dia, mês e ano)
+        let formato2 = data.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+
+        // Formato 3: estilo internacional (aaaa-mm-dd)
+        let ano = data.getFullYear();
+        let mes = String(data.getMonth() + 1).padStart(2, "0");
+        let dia = String(data.getDate()).padStart(2, "0");
+        let formato3 = `${ano}-${mes}-${dia}`;
+
+        document.getElementById("formato1").innerHTML = "Formato 1: " + formato1;
+        document.getElementById("formato2").innerHTML = "Formato 2: " + formato2;
+        document.getElementById("formato3").innerHTML = "Formato 3: " + formato3;
+    </script>
+</body>
+
+</html>

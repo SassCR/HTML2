@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <h1>Usando metodos matematicos</h1>
+    <p>Crie uma página web, com dois botões, um que calcule a potência 𝑋 Y
+        e outro a raiz quadrada √𝑋
+        desse números, de acordo com a escolha ative os campos de entrada, faça as validações necessárias,
+        exiba o resultado.</p>
+    <label for="X">Digite seu numero X</label>
+    <input type="number" id="X" placeholder="aqui vai o X" disabled>
+    <br>
+    <label for="Y">Digite seu numero Y</label>
+    <input type="number" id="Y" placeholder="aqui vai o Y" disabled>
+    <br>
+    <button type="button" onclick="potencia()">Calcular Potencia</button>
+    <button type="button" onclick="raiz()">Calcular a Raiz</button>
+    <p id="Resultado"></p>
+
+    <script>
+        const x = document.getElementById("X")
+        const y = document.getElementById("Y")
+
+        const potencia = () => {
+            x.removeAttribute("disabled")
+            y.removeAttribute("disabled")
+            let n1 = x.value
+            let n2 = y.value
+            if (!n1 || !n2) {
+                return document.getElementById("Resultado").innerHTML = "Campos liberados, basta preencher e clicar novamente."
+            } else {
+                return document.getElementById("Resultado").innerHTML = `${n1}^${n2} = ${Math.pow(n1, n2)}`
+            }
+
+        }
+        const raiz = () => {
+            x.removeAttribute("disabled")
+            y.setAttribute("disabled", "disabled")
+            let n1 = x.value
+            if (!X) {
+                return document.getElementById("Resultado").innerHTML = "Campo liberado, basta preencher e clicar novamente."
+            } else {
+                return document.getElementById("Resultado").innerHTML = `√${n1} = ${Math.sqrt(n1)}`
+            }
+        }
+    </script>
 </body>
+
 </html>
