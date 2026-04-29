@@ -7,6 +7,9 @@
     <title>Document</title>
 
     <style>
+        @media only screen and (orientation: ){
+            
+        }
         body {
             display: flex;
             justify-content: space-around;
@@ -16,9 +19,7 @@
         }
         #botao{
             color: black;
-            background-color: blue;
-            
-            
+            background-color: blue;   
         }
     </style>
 </head>
@@ -61,7 +62,8 @@
             let nome = document.getElementById("Nome").value
             let fone = document.getElementById("Fone").value
             let email = document.getElementById("Email").value
-            let idade = document.getElementById("Data").value
+            let idade = Number(document.getElementById("Data").value)
+            let idadeL = document.getElementById("Data").value
             let estado = document.getElementById("Estado").value
             let cidade = document.getElementById("Cidade").value
             let trabalho = document.getElementById("Trabalho").value
@@ -71,7 +73,7 @@
             fone = fone.trim()
             email = email.trim()
 
-            if (!nome || !fone || !email || !idade || !estado || !trabalho || !cidade) {
+            if (!nome || !fone || !email || !idadeL || !estado || !trabalho || !cidade) {
                 return alert("Preencha todos os campos!")
             }
 
@@ -80,7 +82,7 @@
             if (isNaN(fone)) {
                 return alert("Digite apenas com números!")
             }
-            if(nome.length < 10 || fone.length > 11){
+            if(fone.length < 10 || fone.length > 11){
                 return alert("Telefone invalido!")
             }
            
@@ -88,11 +90,13 @@
             if(email.search("@") === -1 || email.search(".") === -1){
                 return alert("digite um email valido!")
             }
-            idade = String(idade)
 
-            let dia = idade.slice(0,2)
-            let mes = idade.slice(2,4)
-            let ano = idade.slice(4) 
+            let dia = idadeL.slice(0,2)
+            let mes = idadeL.slice(2,4)
+            let ano = idadeL.slice(4)
+            dia = Number(dia)
+            mes = Number(mes)
+            ano = Number(ano)
             let dataReal = new Date(ano,mes -1,dia)
 
             if(dataReal.getDate() != dia || dataReal.getMonth() != mes -1 || dataReal.getFullYear() != ano){
@@ -110,7 +114,7 @@
             
 
             document.getElementById("mostrar").innerHTML = `Eu me chamo ${nome}
-            nasci no ano ${ano} e tenho ${idadeAtual} moro na cidade ${cidade} do estado de ${estado} e atualmente estou ${trabalho}
+            nasci no ano ${ano} e mês ${mes +1} e no ${dia} tenho ${idadeAtual} moro na cidade ${cidade} do estado de ${estado} e atualmente estou ${trabalho}
             <br>
             <br>
             Meus contatos:
