@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+            color: white;
+        
+        }
+        #botao{
+            color: black;
+            background-color: blue;
+            
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Meu site pessoal!</legend>
+            <label for="Nome">Nome Completo:</label>
+            <input type="text" id="Nome" placeholder="Digite seu nome!">
+            <br>
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" placeholder="Digite seu Email!">
+            <br>
+            <label for="Fone">Telefone:</label>
+            <input type="text" id="Fone" placeholder="Digite seu número!">
+            <br>
+            <label for="Data">Data Nascimento:</label>
+            <input type="date" id="Data">
+            <br>
+            <label for="Cidade">Cidade:</label>
+            <input type="text" id="Cidade" placeholder="Digite o nome da cidade!" required>
+            <br>
+            <label for="Estado">Estado:</label>
+            <input type="text" id="Estado" placeholder="Digite o nome do Estado!" required>
+            <br>
+            <label for="Trabalho">Profissão:</label>
+            <input type="text" id="Trabalho" placeholder="Qual é a sua profissão?">
+            <br>
+            <button type="button" id="botao" onclick="verificar()">Enviar</button>
+        </fieldset>
+        <fieldset>
+            <h3>Minha biografia!</h3>
+            <p id="mostrar"></p>
+        </fieldset>
+    </form>
+
+    <script>
+        const verificar = () => {
+            let nome = document.getElementById("Nome").value
+            let fone = document.getElementById("Fone").value
+            let email = document.getElementById("Email").value
+            let idade = document.getElementById("Data").value
+
+            //tirando os espaços
+            nome = nome.trim()
+            fone = fone.trim()
+            email = email.trim()
+
+            if (!nome || !fone || !email === -1) {
+                return alert("Preencha todos os campos!")
+            }
+
+
+            let validarFone = fone.search(/[0-9+]/g)
+            if (validarFone === -1) {
+                return alert("Digite apenas com números!")
+            }
+            let validarEmail = email.search(/[@]/g)
+            if(validarEmail === -1){
+                return alert("digite um email valido!")
+            }
+
+            let dia = splice(0,2)
+            let mes = splice(4,2)
+            let ano = splice(4) 
+            let geral = new date(ano,mes,dia)
+            
+
+            document.getElementById("mostrar").innerHTML = `Eu me chamo ${nome}
+            nasci no ano ${data} e tenho`
+            }
+
+        
+    </script>
+</body>
+
+</html>

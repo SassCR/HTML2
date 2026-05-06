@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+            color: white;
+
+        }
+
+        #botao {
+            color: black;
+            background-color: blue;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Meu site pessoal!</legend>
+            <label for="Nome">Nome Completo:</label>
+            <input type="text" id="Nome" placeholder="Digite seu nome!">
+            <br>
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" placeholder="Digite seu Email!">
+            <br>
+            <label for="Fone">Telefone:</label>
+            <input type="text" id="Fone" maxlength="11" placeholder="Digite seu número!">
+            <br>
+            <label for="Data">Data Nascimento:</label>
+            <input type="text" id="Data" maxlength="8">
+            <br>
+            <label for="Cidade">Cidade:</label>
+            <input type="text" id="Cidade" placeholder="Digite o nome da cidade!">
+            <br>
+            <label for="Estado">Estado:</label>
+            <input type="text" id="Estado" placeholder="Digite o nome do Estado!">
+            <br>
+            <label for="Trabalho">Profissão:</label>
+            <input type="text" id="Trabalho" placeholder="Qual é a sua profissão?">
+            <br>
+            <button type="button" id="botao" onclick="verificar()">Enviar</button>
+
+        </fieldset>
+        <fieldset>
+            <h3>Minha biografia!</h3>
+            <p id="mostrar"></p>
+        </fieldset>
+        <fieldset>
+            <label for="muda">Mudar de cor</label>
+            <input type="color" onchange="mudarCor()" id="cor">
+            <p id="buscar">Aqui vai mostrar a palavra</p>
+        </fieldset>
+    </form>
+
+    <script>
+        const verificar = () => {
+            let nome = document.getElementById("Nome").value
+            let fone = document.getElementById("Fone").value
+            let email = document.getElementById("Email").value
+            let idadeL = Number(document.getElementById("Data").value)
+            let idade = document.getElementById("Data").value
+            let estado = document.getElementById("Estado").value
+            let cidade = document.getElementById("Cidade").value
+            let trabalho = document.getElementById("Trabalho").value
+
+
+
+
+            //tirando os espaços
+            nome = nome.trim()
+            fone = fone.trim()
+            email = email.trim()
+            cidade = cidade.trim()
+            estado = estado.trim()
+            trabalho = trabalho.trim()
+
+            if (!nome || !fone || !email || !cidade || !estado || !trabalho || !idadeL) {
+                return alert("Preencha todos os campos!")
+            }
+
+
+            let validarFone = fone.search(/[0-9+]/g)
+            if (validarFone === -1) {
+                return alert("Digite apenas com números!")
+            }
+            let validarEmail = email.search(/[@]/g)
+            if (validarEmail === -1) {
+                return alert("digite um email valido!")
+            }
+            idadeL = String(idade)
+
+            let dia = idadeL.split(0, 2)
+            let mes = idadeL.split(2, 4)
+            let ano = idadeL.split(4)
+            let dataReal = new Date(ano, mes - 1, dia)
+
+            if (dataReal.getDay() != dia || dataReal.getMonth() != mes - 1 || dataReal.getFullYear != ano) {
+                return alert("Digite uma data valida!")
+            }
+
+            let aniversario = getFullYear() - ano
+
+
+            document.getElementById("mostrar").innerHTML = `Eu me chamo ${nome}
+            nasci no ano ${ano} e tenho ${aniversario} anos de idade. atualmente estou ${trabalho}`
+        }
+
+        const mudarCor = () => {
+            let buscador = Elemento.getElementById("cor").value
+            buscador.styale.color = "black"
+            
+            
+        }
+
+
+    </script>
+</body>
+
+</html>

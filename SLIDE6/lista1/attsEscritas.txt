@@ -1,0 +1,47 @@
+1. **O que significa DOM?**
+   DOM significa **Document Object Model** (Modelo de Objeto do Documento). 
+   É uma representação estruturada do HTML (ou XML) em forma de objetos que o navegador cria, permitindo que linguagens como JavaScript interajam com a página.
+
+---
+
+2. **Analogia da “árvore” para o DOM**
+   O DOM pode ser comparado a uma árvore genealógica:
+
+* Cada elemento HTML é um “nó” da árvore.
+* Existe um elemento raiz (como `<html>`).
+* Os elementos dentro de outros são “filhos”.
+* Elementos no mesmo nível são “irmãos”.
+
+Essa estrutura ajuda a organizar e acessar partes do documento de forma hierárquica.
+
+---
+
+3. **Dado o HTML:**
+* Quem é o pai do elemento `<p>`?
+  → O elemento `<div>`
+
+* O elemento `<span>` é filho de quem?
+  → Do elemento `<div>`
+
+* Os elementos `<p>` e `<span>` são irmãos?
+  → Sim, porque têm o mesmo pai (`<div>`)
+
+---
+
+4. **3 tipos de nós no DOM**
+
+* Nó de elemento (ex: `<div>`, `<p>`)
+* Nó de texto (ex: "Olá", "Mundo")
+* Nó de atributo (ex: `class="exemplo"`)
+
+---
+
+5. **Por que o JavaScript é importante no DOM?**
+   O JavaScript permite **interagir e modificar o DOM dinamicamente**, ou seja:
+
+* Alterar conteúdos (texto, imagens, etc.)
+* Modificar estilos (cores, tamanhos)
+* Criar ou remover elementos
+* Responder a ações do usuário (cliques, teclas, etc.)
+
+Sem JavaScript, o DOM seria estático; com ele, as páginas se tornam interativas e dinâmicas. 
