@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="fotoPerfil" src="https://pbs.twimg.com/media/F_BXjtKbMAASi5d.jpg" alt="Usuário">
+    <button onclick="mudarFoto()">mudar foto</button>
+    <script>
+        const mudarFoto = () => {
+            const img = document.getElementById('fotoPerfil');
+            if (img.getAttribute("src") === "https://pbs.twimg.com/media/F_BXjtKbMAASi5d.jpg") {
+                img.setAttribute('src', 'https://pbs.twimg.com/media/FsqSXkWakAEFxZa.png');
+                img.alt = 'Foto atualizada do usuário'; // Acesso direto
+                console.log(img.getAttribute('src')); // fotoPerfil
+            } else {
+                img.setAttribute('src', 'https://pbs.twimg.com/media/F_BXjtKbMAASi5d.jpg');
+                img.alt = 'Foto atualizada do usuário'; // Acesso direto
+                console.log(img.getAttribute('src')); // fotoPerfil
+            }
+        }
+    </script>
+</body>
+
+</html>

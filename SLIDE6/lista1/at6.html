@@ -9,19 +9,33 @@
 
 <body>
     <div id="principal">
-        <h1 class="titulo">Bem-vindo!</h1>
+        <h1 class="titulo" id="cabecalho">Bem-vindo!</h1>
         <p class="texto">Este é um parágrafo.</p>
-        <p class="texto importante">Este é outro parágrafo.</p>
+        <p class="importante">Este é outro parágrafo.</p>
         <ul>
-            <li>Item A</li>
-            <li>Item B</li>
+            <li class="Itens">Item A</li>
+            <li class="Itens">Item B</li>
         </ul>
     </div>
 
     <script>
         /*6) Escreva o código JavaScript para selecionar o elemento <h1> usando seu ID
 (suponha que ele tenha id="cabecalho"). */
+        let selecionado = document.getElementById("cabecalho").value
+        /*7) Como você selecionaria TODOS os elementos <p> dentro da div com
+id="principal" usando getElementsByTagName? */
+        let selecionarTodos = document.getElementById("principal").document.getElementsByTagName("p")
+        /*8) Escreva o código para selecionar apenas o parágrafo que tem AMBAS as
+classes "texto" e "importante" usando querySelector. */
+        let todosOsP = document.querySelector("p.texto.importante")
+        /*9) Como você selecionaria todos os elementos <li> usando querySelectorAll? */
+        let todosOsUL = document.querySelectorAll("li")
+        /*10) Qual a principal diferença entre o retorno de getElementsByClassName e
+querySelectorAll em termos de serem "ao vivo" ou "estáticos"? */
+        /*Resposta: O getElementsByClassName retorna uma HTMLCollectioon, que é "ao vivo",
+        enquanto o querySelectorAll retorna uma Nodelis que é "estatica".*/
 
     </script>
 </body>
+
 </html>

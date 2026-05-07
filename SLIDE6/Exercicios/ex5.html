@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="statusMsg" class="info">Vamos mudar essa mensagem.</p>
+    <button type="button" onclick="mudarMensagem()">MudarMensagem</button>
+    <script>
+        const mudarMensagem = () => {
+            const msg = document.getElementById('statusMsg');
+            msg.classList.remove('info');
+            msg.classList.add('sucesso'); // Agora tem class="sucesso"
+            if (msg.classList.contains('sucesso')) {
+                msg.textContent = 'Operação bem-sucedida!';
+            }
+        }
+    </script>
+</body>
+
+</html>
