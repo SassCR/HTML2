@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="botao" class="botao primario" onclick="mudarcoisas()">Bom dia</button>
+
+    <script>
+        /*◦ a) Como você adicionaria a classe "ativo" ao botão usando classList?
+     ◦ b) Como você removeria a classe "primario" do botão usando classList?
+     ◦ c) Como você verificaria se o botão possui a classe "botao"? */
+        const mudarcoisas = () => {
+            const msg = document.getElementById("botao")
+            msg.classList.add("ativo!");
+            msg.classList.remove("primario");
+            if(msg.classList.contains("botao")){
+                return alert("class encontrada com sucesso")
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
