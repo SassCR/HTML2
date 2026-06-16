@@ -5,6 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validando</title>
+    <style>
+        /*O css foi com muita ajuda do gpt, não lembro de quase nada de css.*/
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4b006e, #8b005d);
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            background: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        legend {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #000000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: .9;
+        }
+
+        #resultado {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        #resultado h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,8 +109,11 @@
             <label>Sobrenome:</label>
             <input type="text" id="Sobrenome">
             <br>
+            <label>E-mail:</label>
+            <input type="email" id="Email">
+            <br>
             <label>CPF:</label>
-            <input type="number" id="CPF">
+            <input type="number" id="CPF" length="11">
             <br>
             <label>Telefone:</label>
             <input type="number" id="Telefone">
@@ -26,23 +121,20 @@
             <label>Endereço:</label>
             <input type="text" id="Endereço">
             <br>
-            <label>Data de Nascimento:</label>
-            <input type="date" id="DNascimento">
-            <br>
             <label>Idade</label>
             <input type="number" id="Idade">
             <br>
-            <label>E-mail:</label>
-            <input type="email" id="Email">
+            <label>Data de Nascimento:</label>
+            <input type="date" id="DNascimento">
+            <br>
         </fieldset>
         <br>
         <button type="button" onclick="verificar()">Enviar!</button>
-
     </form>
 
 
 
-    <p id="resultado"></p>
+    <div id="resultado"></div>
 
     <script>
         const verificar = () => {
@@ -50,24 +142,35 @@
             let nome2 = document.getElementById("Sobrenome").value
             let cpf = document.getElementById("CPF").value
             let fone = document.getElementById("Telefone").value
-            let data = new Date(document.getElementById("Endereço").value)
-            let idade = document.getElementById("DNascimento").value
+            let endereco = document.getElementById("Endereço").value
+            let data = document.getElementById("DNascimento").value
+            let idade = document.getElementById("Idade").value
             let email = document.getElementById("Email").value
 
             nome = nome.charAt(0).toUpperCase() + nome.charAt(1).toUpperCase() + nome.slice(2)
             nome2 = nome2.charAt(0).toUpperCase() + nome2.charAt(1).toUpperCase() + nome2.slice(2)
 
-            let cpf1 = cpf.slice(0, 3) 
-            let cpf2 = cpf.slice(3, 6) 
+            //CPF
+            let cpf1 = cpf.slice(0, 3)
+            let cpf2 = cpf.slice(3, 6)
             let cpf3 = cpf.slice(6, 9)
-            let cpf4 = cpf.slice(9,11)
+            let cpf4 = cpf.slice(9, 11)
             let cpfformatado = cpf1 + "." + cpf2 + "." + cpf3 + "-" + cpf4
-            //agora o telefone
-            let fone1 = fone.slice(0, 3) 
-            let fone2 = fone.slice(3, 6) 
-            let fone3 = fone.slice(6, 9)
-            let fone4= fone.slice(9,11)
-            let foneFormatado = fone1 + "." + fone2 + "." + fone3 + "-" + fone4
+            //Telefone
+            let fone1 = fone.slice(0, 2)
+            let fone2 = fone.slice(2, 7)
+            let fone3 = fone.slice(7, 11)
+            let foneFormatado = "(" + fone1 + ")" + fone2 + "-" + fone3
+            //Data de Nascimento
+            let data1 = data.slice(0, 4)
+            let data2 = data.slice(5, 7)
+            let data3 = data.slice(8, 10)
+            let dataformatada = data3 + "/" + data2 + "/" + data1
+            //Email
+            verificandoEmail = email.includes("@") || email.includes(".com")
+            if (verificandoEmail != true) {
+                return alert("Email inválido, por favor insira um email válido!")
+            }
 
 
 
@@ -75,9 +178,31 @@
 
 
 
-            const resultado = document.getElementById("resultado").innerHTML = `Meu nome completo é ${nome} ${nome2} meu CPF é ${cpfformatado}`
+            document.querySelector("form").style.display = "none";
 
-        }
+            document.getElementById("resultado").style.display = "block";
+
+            document.getElementById("resultado").innerHTML = `
+    <h2>Cadastro Realizado</h2>
+
+    <div class="info"><strong>Nome:</strong> ${nome} ${nome2}</div>
+
+    <div class="info"><strong>CPF:</strong> ${cpfformatado}</div>
+
+    <div class="info"><strong>Telefone:</strong> ${foneFormatado}</div>
+
+    <div class="info"><strong>Endereço:</strong> ${endereco}</div>
+
+    <div class="info"><strong>Data de Nascimento:</strong> ${dataformatada}</div>
+
+    <div class="info"><strong>Idade:</strong> ${idade} anos</div>
+
+    <div class="info"><strong>E-mail:</strong> ${email}</div>
+`;
+
+        }  
+
+        
     </script>
 </body>
 
