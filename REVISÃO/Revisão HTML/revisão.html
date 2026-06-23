@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Formulario!</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <form id="Caixa-Grande">
+        <fieldset>
+        <legend>Meu Formulario!</legend>
+        <br>
+        <label for="nome">Nome:</label>
+        <input id="Nome" type="text" placeholder="digite o primeiro nome!">
+        <br>
+        <label for="Sobrenome">Sobrenome:</label>
+        <input id="Sobrenome" type="text" placeholder="digite o seu sobrenome!">
+        <br>
+        <label for="Email">Email:</label>
+        <input id="Email" type="email">
+        <br>
+        <label for="Fone">Telefone:</label>
+        <input id="Fone" type="tel" placeholder="digite seu número {DD}****-****">
+        <br>
+        <label for="CPF">CPF:</label>
+        <input id="CPF" type="number" placeholder="digite seu CPF:000.000.000-00">
+        </fieldset>
+    </form>
+    <button type="button" onclick="botaovalidar()">Enviar</button>
+    <fieldset>
+        <p id="mostrar"></p>
+    </fieldset>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
